@@ -1,0 +1,464 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Family and Gallery</title>
+
+<style>
+
+.music-icon {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+    z-index: 9999;
+    transition: 0.2s;
+}
+
+.music-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.home-btn{
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 32px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+  z-index: 9999;
+}
+
+.home-btn:hover{
+  transform: scale(1.10);
+  opacity: 0.70;
+} 
+
+  :root{
+    --bg1:#D7A1F9; 
+    --bg2:#f9f4ff;  
+    --card:#ffffff;
+    --accent:#6c4db5;
+    --muted:#666;
+    --radius:14px;
+    font-family: "Segoe UI", Roboto, system-ui;
+  }
+
+body{
+    background: url("biodatabackground.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    color: #333;
+}
+
+header{
+  width:100%;
+  background:#51087E;
+  padding:35px 0;
+  text-align:center;
+  margin:0;
+  border-radius:0;
+  margin-bottom: 30px;
+}
+
+header h1{
+  color:white;
+  margin:0;
+  font-size:38px;
+  letter-spacing:1px;
+}
+
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:30px;
+  }
+
+  .card{
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow: 0 8px 20px rgba(30,20,60,0.06);
+    padding:16px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    transition:0.3s ease;
+  }
+
+  .avatar{
+    width:110px;
+    height:110px;
+    border-radius:999px;
+    overflow:hidden;
+    margin-bottom:12px;
+    border:6px solid rgba(108,77,181,0.12);
+  }
+  .avatar img{
+    width:100%; height:100%; object-fit:cover;
+  }
+
+  .name{ font-weight:700; color:#222; margin-bottom:4px; }
+  .relation{ color:var(--muted); font-size:14px; margin-bottom:10px; }
+  .bio{ font-size:14px; color:#333; margin-bottom:12px; min-height:42px; }
+  .meta{ font-size:13px; color:var(--muted); margin-bottom:12px; }
+
+  .btn{
+    background:transparent;
+    border:1px solid rgba(108,77,181,0.14);
+    color:var(--accent);
+    padding:8px 12px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+  }
+
+
+  .modal-backdrop{
+    position:fixed; inset:0; background:rgba(0,0,0,0.45);
+    display:flex; align-items:center; justify-content:center;
+    visibility:hidden; opacity:0; transition:all .18s ease;
+    z-index:40;
+  }
+  .modal-backdrop.show{ visibility:visible; opacity:1; }
+
+  .modal{
+    background:var(--card);
+    padding:20px; border-radius:12px; width:92%; max-width:560px;
+    box-shadow:0 20px 50px rgba(20,15,40,0.25);
+  }
+  .modal h3{ margin:0 0 6px; color:var(--accent); }
+  .close{
+    background:#eee; border:0;
+    padding:6px 10px; border-radius:8px;
+    cursor:pointer; float:right;
+  }
+
+  .gallery-title{
+    font-size: 28px;
+    margin-top: 50px;
+    text-align:center;
+    color: var(--accent);
+    font-weight:700;
+  }
+
+  .gallery-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .gallery-container img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+  }
+
+  .gallery-container img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  }
+
+
+.img-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.img-popup img {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  animation: zoomIn 0.25s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+
+  @media(max-width:420px){
+    .avatar{ width:90px; height:90px; }
+    .gallery-container{
+      grid-template-columns:1fr;
+    }
+  }
+
+</style>
+</head>
+
+<body>
+<a href="index.html" class="home-btn">🏠︎</a>
+
+<audio id="bgMusic">
+    <source src="memo.mp3" type="audio/mp3">
+</audio>
+
+<div class="music-icon" onclick="toggleMusic()" id="musicBtn">𝄞</div>
+
+<!-- ===== INTRO HEADER ===== -->
+<header>
+  <h1>My Family</h1>
+</header>
+
+<!-- ===== FAMILY SECTION ===== -->
+<div class="container">
+  <div class="grid">
+    
+    <div class="card" data-id="1">
+      <div class="avatar"><img src="ayah.jpg"></div>
+      <div class="name">Abdulnizan Bin Muhammad Isa</div>
+      <div class="relation">Father</div>
+      <div class="bio">Likes to plant trees and gardening.</div>
+      <div class="meta">Age: 51</div>
+      <button class="btn" onclick="openModal(1)">More</button>
+    </div>
+
+    <div class="card" data-id="2">
+      <div class="avatar"><img src="mak.jpg"></div>
+      <div class="name">Siti Zuraini Binti Ibrahim</div>
+      <div class="relation">Mother</div>
+      <div class="bio">Likes to plant trees and gardening.</div>
+      <div class="meta">Age: 46</div>
+      <button class="btn" onclick="openModal(2)">More</button>
+    </div>
+
+    <div class="card" data-id="3">
+      <div class="avatar"><img src="gambarresume.jpeg"></div>
+      <div class="name">Syaidatul Nazira Binti Abdulnizan</div>
+      <div class="relation">Sister</div>
+      <div class="bio">Likes to take pictures of the sky and cook.</div>
+      <div class="meta">Age: 20</div>
+      <button class="btn" onclick="openModal(3)">More</button>
+    </div>
+
+    <div class="card" data-id="4">
+      <div class="avatar"><img src="angah.jpg"></div>
+      <div class="name">Muhammad Faris Bin Abdulnizan</div>
+      <div class="relation">Younger brother</div>
+      <div class="bio">Riding motorcycle.</div>
+      <div class="meta">Age: 18</div>
+      <button class="btn" onclick="openModal(4)">More</button>
+    </div>
+
+    <div class="card" data-id="5">
+      <div class="avatar"><img src="anis.jpg"></div>
+      <div class="name">Nurul Hanis Binti Abdulnizan</div>
+      <div class="relation">Younger sister</div>
+      <div class="bio">Reading book and drawing.</div>
+      <div class="meta">Age: 16</div>
+      <button class="btn" onclick="openModal(5)">More</button>
+    </div>
+
+    <div class="card" data-id="6">     
+    <div class="avatar"><img src="fahmi.jpg"></div>
+      <div class="name">Muhammad Fahmi Bin Abdulnizan</div>
+      <div class="relation">Younger Brother</div>
+      <div class="bio">Interested in fishing.</div>
+      <div class="meta">Age: 14</div>
+      <button class="btn" onclick="openModal(6)">More</button>
+    </div>
+
+    <div class="card" data-id="7">
+      <div class="avatar"><img src="atuk.jpg"></div>
+      <div class="name">Ibrahim Bin Ismail</div>
+      <div class="relation">Grandfather</div>
+      <div class="meta">Age : 87 </div>
+      <button class="btn" onclick="openModal(7)">More</button>
+    </div>
+
+    <div class="card" data-id="8">
+      <div class="avatar"><img src="nenek.jpg"></div>
+      <div class="name">Napsiah Binti Sangeron</div>
+      <div class="relation">Grandmother</div>
+      <div class="meta">Age: 82</div>
+      <button class="btn" onclick="openModal(8)">More</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PHOTO GALLERY ===== -->
+<h2 class="gallery-title">My Photo Gallery</h2>
+
+<div class="gallery-container">
+    <img src="f1.jpg" onclick="zoomImg(this)">
+    <img src="f2.jpg" onclick="zoomImg(this)">
+    <img src="f3.jpg" onclick="zoomImg(this)">
+    <img src="f4.jpg" onclick="zoomImg(this)">
+    <img src="f5.jpg" onclick="zoomImg(this)">
+    <img src="f6.jpg" onclick="zoomImg(this)">
+    <img src="f7.jpg" onclick="zoomImg(this)">
+    <img src="f8.jpg" onclick="zoomImg(this)">
+    <img src="f9.jpg" onclick="zoomImg(this)">
+    <img src="f10.jpg" onclick="zoomImg(this)">
+    <img src="f11.jpg" onclick="zoomImg(this)">
+    <img src="f12.jpg" onclick="zoomImg(this)">
+    <img src="f13.jpg" onclick="zoomImg(this)">
+    <img src="f14.jpg" onclick="zoomImg(this)">
+    <img src="f15.jpg" onclick="zoomImg(this)">
+    <img src="f16.jpg" onclick="zoomImg(this)">
+    <img src="f17.jpg" onclick="zoomImg(this)">
+    <img src="f18.jpg" onclick="zoomImg(this)">
+    <img src="f19.jpg" onclick="zoomImg(this)">
+    <img src="f20.jpg" onclick="zoomImg(this)">
+    <img src="f21.jpg" onclick="zoomImg(this)">
+    <img src="f22.jpg"onclick="zoomImg(this)">
+    <img src="f23.jpg" onclick="zoomImg(this)">
+    <img src="f24.jpg" onclick="zoomImg(this)">
+    <img src="f25.jpg" onclick="zoomImg(this)">
+    <img src="f26.jpg" onclick="zoomImg(this)">
+    <img src="f27.jpg" onclick="zoomImg(this)">
+    <img src="f28.jpg" onclick="zoomImg(this)">
+    <img src="f29.jpg" onclick="zoomImg(this)">
+    <img src="f30.jpg" onclick="zoomImg(this)">
+    <img src="f31.jpg" onclick="zoomImg(this)">
+    <img src="f32.jpg" onclick="zoomImg(this)">
+    <img src="f33.jpg" onclick="zoomImg(this)">
+    <img src="f34.jpg"onclick="zoomImg(this)">
+    <img src="f35.jpg" onclick="zoomImg(this)">
+    <img src="f36.jpg" onclick="zoomImg(this)">
+    <img src="f37.jpg" onclick="zoomImg(this)">
+    <img src="f38.jpg"onclick="zoomImg(this)">
+    <img src="f39.jpg" onclick="zoomImg(this)">
+    <img src="f40.jpg"onclick="zoomImg(this)">
+    <img src="f42.jpg" onclick="zoomImg(this)">
+    <img src="f43.jpg"onclick="zoomImg(this)">
+    <img src="f44.jpg"onclick="zoomImg(this)">
+    <img src="f45.jpg" onclick="zoomImg(this)">
+    <img src="f46.jpg" onclick="zoomImg(this)">
+    <img src="f47.jpg" onclick="zoomImg(this)">
+    <img src="f48.jpg" onclick="zoomImg(this)">
+    <img src="f52.jpg" onclick="zoomImg(this)">
+    <img src="f53.jpg" onclick="zoomImg(this)">
+    <img src="f54.jpg" onclick="zoomImg(this)">
+    <img src="f55.jpg" onclick="zoomImg(this)">
+    <img src="f56.jpg" onclick="zoomImg(this)">
+    <img src="f57.jpg" onclick="zoomImg(this)">
+    <img src="f58.jpg" onclick="zoomImg(this)">
+    <img src="f59.jpg" onclick="zoomImg(this)">
+    <img src="f60.jpg" onclick="zoomImg(this)">
+    <img src="f61.jpg" onclick="zoomImg(this)">
+    <img src="f62.jpg" onclick="zoomImg(this)">
+    <img src="f63.jpg" onclick="zoomImg(this)">
+    <img src="f64.jpg" onclick="zoomImg(this)">
+    <img src="f65.jpg" onclick="zoomImg(this)">
+    <img src="f66.jpg" onclick="zoomImg(this)">
+    <img src="f67.jpg" onclick="zoomImg(this)">
+    <img src="f68.jpg" onclick="zoomImg(this)">
+
+
+
+</div>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="close" onclick="closeModal()">Close</button>
+    <h3 id="modalTitle">Family Member Details</h3>
+    <p id="modalContent"></p>
+  </div>
+</div>
+
+<div class="img-popup" id="imgPopup" onclick="closeImg()">
+  <img id="popupImg">
+</div>
+
+<script>
+const familyData = {
+  1:{
+    title:"Father Name — Abdulnizan Bin Muhammad Isa",
+    text:"My father works at a factory in Muar called VTech."
+  },
+  2:{
+    title:"Mother Name - Siti Zuraini Binti Ibrahim",
+    text:"My mother works at a school called Sekolah Agama Seri Laksana."
+  },
+  3:{
+    title:"Sister name - Syaidatul Nazira Binti Abdulnizan",
+    text:"I am continuing my studies at the Universiti of Teknologi MARA in Information Management."
+  },
+  4:{
+    title:"Younger brother name - Muhammad Faris Bin Abdulnizan",
+    text:"Currently continuing his studies at Giatmara."
+  },
+  5:{
+    title:" Younger sister name - Nurul Hanis Binti Abdulnizan",
+    text:"Currently continuing her studies at Sekolah Menengah Agama Parit Sulong."
+  },
+  6:{
+    title:"Younger brother name - Muhammad Fahmi Bin Abdulnizan",
+    text:"Currently continuing his studies at Sekolah Menengah Agama Parit Sulong."
+  },
+  7:{
+    title:"Grandfather name - Ibrahim Bin Ismail",
+    text:"He is a person who likes to tell jokes and tell stories."
+  },
+  8:{
+    title:"Grandmother name - Napsiah Binti Sangeron",
+    text:"She is a loving person and loves to cook."
+  }
+
+};
+
+const backdrop=document.getElementById('modalBackdrop');
+const modalTitle=document.getElementById('modalTitle');
+const modalContent=document.getElementById('modalContent');
+
+function openModal(id){
+  const d = familyData[id];
+  modalTitle.textContent = d.title;
+  modalContent.textContent = d.text;
+  backdrop.classList.add('show');
+}
+
+function closeModal(e){
+  if(!e || e.target===backdrop || e.target.classList.contains('close')){
+    backdrop.classList.remove('show');
+  }
+}
+
+function zoomImg(img){
+  document.getElementById("popupImg").src = img.src;
+  document.getElementById("imgPopup").style.display = "flex";
+}
+
+function closeImg(){
+  document.getElementById("imgPopup").style.display = "none";
+}
+
+function toggleMusic() {
+    let music = document.getElementById("bgMusic");
+    let btn = document.getElementById("musicBtn");
+
+    if (music.paused) {
+        music.play();
+        btn.textContent = "⏸";
+    } else {
+        music.pause();
+        btn.textContent = "𝄞";
+    }
+}
+
+</script>
+
+</body>
+</html>
