@@ -1,0 +1,157 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Homepage</title>
+  <style>
+
+.content-box {
+  background: #FFE6F0;
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 900px;
+  margin: 30px auto;
+  line-height: 1.7;
+  text-align: justify;
+}
+.content-box h2 {
+  margin-top: 0;
+  color: #51087E;
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10;
+      padding: 10;
+      background: url('background.jpg') 
+    }
+    header {
+      background: #51087E;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+    }
+    nav {
+      background: #880ED4;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 60px;
+      text-align: center;
+      background: #D7A1F9;
+    }
+    .hero h1 {
+      font-size: 40px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #555;
+    }
+    .section {
+      padding: 40px;
+      text-align: center;
+      background: #C576F6;
+      font-size: 17px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+    }
+
+    #datetime {
+      position: center; 
+      top: 20px; 
+      right: 40px; 
+      background: rgba(255,255,255,0.2); 
+      padding: 8px 16px; 
+      border-radius: 14px; 
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Syaidatul's Personal Website!</h1>
+    <p>"Start where you are. Use what you have. Do what you can."</p>
+    <div id="datetime"></div>
+
+  </header>
+
+<nav>
+    <a href="educational.html"target="_blank">🎓Education</a>
+    <a href="family.html"target="_blank">👨‍👩‍👧‍👦Family</a>
+    <a href="biodata.html"target="_blank">📝Biodata</a>
+    <a href="Favorite.html"target="_blank">😍Favorite</a>
+    <a href="school.html"target="_blank">🏫School Life</a>
+  </nav>
+
+
+  <section id="about" class="section">
+  <div class="content-box">
+    <h2>About Me 𓍢ִ໋🌷͙֒</h2>
+    <img src="aboutme.jpg" alt="About Me Image" 
+         style="width:200px; border-radius:12px; margin:20px auto; display:block;">
+
+    <p>Hello guys! My name is Syaidatul Nazira Binti Abdulnizan,known as Syai. I am a final-year student in Information Management. I have a strong interest in basic web development, metadata, and information management. I enjoy creating clean, simple, and aesthetic website designs, especially using HTML. I’m also passionate about creative content, minimal web layouts, and soft design elements. In my free time, I love exploring new design ideas, making notes, and creating simple content. I consider myself creative, quick to learn, and always excited to try new things. I hope I can build more web projects for my portfolio and continue improving my coding skills for the future.</p>
+    <p>One of my favourite things is perfumes, especially those that are soft, sweet, and comforting, like vanilla, floral soft, and creamy gourmand. I love fragrances that are subtle yet memorable, leaving a gentle impression without being overpowering. Choosing perfumes that are soft and elegant feels like expressing my personality in a quiet and meaningful way, and they often remind me of special moments, cherished memories, and the people I love. I enjoy how a carefully chosen fragrance can make an ordinary day feel a little brighter and a little more special.</p>
+</div>
+  </section>
+
+
+  <section id="services" class="section">
+  <div class="content-box">
+  <h2>Goals and Dreams 💫</h2>
+  <p>My goal in life is to grow into someone who is gentle, kind, and truly at peace with myself. I want to keep learning and improving slowly, without rushing and without comparing my journey to anyone else. I dream of becoming a stronger and wiser version of myself, someone who can face life with patience, softness, and quiet confidence. I hope to build a future that is emotionally stable, financially secure, and filled with beautiful memories that make my heart feel warm.</p>
+
+   <p>At the same time, I want to live a life that brings me closer to Allah, a life filled with gratitude, calmness, and sincerity. I want to become someone who is soft-hearted yet strong, patient during hardships, and grateful during ease. I hope to make my family proud, to appreciate the people who love me, and to surround myself with moments that feel safe and meaningful.</p>
+
+   <p>Most of all, I dream of a future where I can look back and say, "I grew, I survived, I became better." I want a life that feels soft, simple, peaceful, and beautifully mine.</p>
+
+</div>
+</section>
+
+
+<section id="contact" class="section">
+  <div class="content-box">
+   <h2>My Personality 😎</h2>
+   <p>I’m a soft-hearted and gentle person who finds beauty in small, simple moments. I care deeply about the people around me, and I love making others feel appreciated because I know how meaningful that feeling is. I’m the type of person who keeps memories close to my heart, whether they come from family, school days, or quiet moments that made me smile.</p>
+
+   <p>I have a calm and quiet personality, but I express myself through words, designs, and little creative things that represent who I am. I enjoy soft colours, nostalgic vibes, and anything that feels warm and peaceful. I’m sentimental, loyal, and easily touched by kindness.</p>
+
+   <p>I’m still learning and growing, step by step, trying to become a better version of myself every day. I like doing things at my own pace, appreciating life gently, and surrounding myself with moments that feel safe, sincere, and meaningful. I believe in being kind, staying grateful, and always choosing softness, even when life gets difficult.</p>
+</div>
+</section>
+
+
+<footer>
+<p>© 2025 Syaidatul Nazira</p>
+</footer>
+
+  <script>
+    function updateDateTime() {
+      const dt = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const dateStr = dt.toLocaleDateString('en-US', options);
+      const timeStr = dt.toLocaleTimeString('en-US', {hour12:false});
+      document.getElementById('datetime').innerHTML = `${dateStr} | ${timeStr}`;
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
+
+</body>
+</html>
+    
