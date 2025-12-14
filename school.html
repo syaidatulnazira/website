@@ -1,0 +1,472 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Life</title>
+
+<style>
+
+.zoom-img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.zoom-img:hover {
+  transform: scale(1.08);
+}
+
+.music-icon {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+    z-index: 9999;
+    transition: 0.2s;
+}
+
+.music-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+
+.home-btn{
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 32px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+  z-index: 9999;
+}
+
+.home-btn:hover{
+  transform: scale(1.10);
+  opacity: 0.70;
+} 
+    body {
+    font-family: Arial, sans-serif;
+    background: url("biodatabackground.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    color: #333;
+    }
+
+    .main-title {
+        font-size: 40px;
+        font-weight: bold;
+        color: #ffffff;
+        background:#51087E;
+        padding: 25px 0;
+        width: 100%;
+        text-align: center;
+        border-radius: 0px;
+        margin-bottom: 40px;
+    }
+
+    .experience-box {
+        background:#CCCCFF;
+        text-align: justify;
+        padding: 20px;
+        border-left: 6px solid #6c4db5;
+        border-radius: 10px;
+        width: 90%;
+        margin-bottom: 30px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .experience-box h2 {
+        color: #6c4db5;
+        margin-bottom: 10px;
+    }
+
+    .subject-section h2 {
+        color: #6c4db5;
+    }
+
+    table {
+        width: 90%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    table, th, td {
+        border: 2px solid #A95C68;
+    }
+    th, td {
+        padding: 12px;
+        font-size: 16px;
+        background: #E6E6FA;
+    }
+    th {
+        background: #e9ddff;
+        color: #6c4db5;
+        font-weight: bold;
+    }
+
+
+    .polaroid-container {
+        display: flex;
+        gap: 50px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    .polaroid {
+        width: 370px;
+        background: #E6E6FA;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        text-align: center;
+        font-size: 14px;
+    }
+    .polaroid img, .polaroid video {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 3px;
+    }
+
+.media-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.media-popup img,
+.media-popup video {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  animation: zoomIn 0.25s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+
+</style>
+</head>
+
+<body>
+<a href="index.html" class="home-btn">🏠︎</a>
+
+<audio id="bgMusic">
+    <source src="photo1.mp3" type="audio/mp3">
+</audio>
+
+<div class="music-icon" onclick="toggleMusic()" id="musicBtn">𝄞</div>
+
+<div class="main-title">School Life</div>
+
+<div class="experience-box">
+<h2>My School Experience</h2>
+<p>My school life is one of the most precious chapters in my memory . A time filled with quiet mornings, laughter in the hallways, and countless small moments that shaped who I am today. When I look back, it feels like watching an old film, soft and warm, coated with nostalgia. I still remember the sound of my alarm in the early morning, the feeling of the cold floor when my feet first touched it, and the rush of packing my bag before leaving the house. The walk to school always felt different each day , sometimes I was excited, sometimes sleepy, sometimes nervous. But no matter how I felt, the sight of my school gates always gave me a familiar kind of comfort, like stepping into a second home. Inside the classroom, everything had its own story. The scratched tables, the dusty whiteboard, the noisy ceiling fan that never worked properly. My friends and I used to laugh at the same old jokes, share snacks during recess, and complain about homework together. Those simple routines became the moments I now miss the most. My favourite memories were always after school. The sky always looked softer in the afternoon, as if it was watching over our little journey together. I didn’t realise it back then, but those walks were the moments that taught me the meaning of growing up. School life wasn’t perfect , but that’s what made it beautiful. The joy, the mistakes, the tears, the laughter… all of it blended into a story I will keep forever. If I could go back, even just for one day, I think I would pay more attention to the small things, the way my friends called my name, the smell of the canteen during recess, the sound of teachers teaching from the front of the class. Now, as I move forward in life, those memories feel like a gentle reminder of where I started. They remind me of who I was, who I’ve become, and who I want to be. My school life may be over, but the feelings it left behind will always stay with me which is soft, warm, and unforgettable.
+</p>
+</div>
+
+<div class="subject-section">
+<h2>Favourite Subjects</h2>
+<ol>
+<li>Syariah</li>
+<li>Usul al-Din</li>
+<li>Business</li>
+</ol>
+</div>
+
+<h2 style="color:#6c4db5;">My Co-Curricular Clubs</h2>
+<table>
+<tr><th>Club Name</th><th>Position</th><th>Year</th></tr>
+<tr><td>Chess and Congkak</td><td>Secretary</td><td>2018-2022</td></tr>
+<tr><td>English Club</td><td>Deputy Chairman</td><td>2018-2022</td></tr>
+<tr><td> Malaysia Girl Islamic Association (PPIM)</td><td>Committee Members</td><td>2018-2022</td></tr>
+</table>
+
+
+<h2 style="color:#6c4db5;">My School Memories</h2>
+
+<div class="polaroid-container">
+
+    <div class="polaroid">
+        <img src="k1.jpg" class="zoom-img"onclick="zoomImg(this)">    
+        <p>𖹭</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k2.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>𖹭</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k3.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>𖹭</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k4.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>🖤⃝🤍</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k5.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>🖤⃝🤍</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k6.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>🖤⃝🤍</p>
+    </div>
+    <div class="polaroid">
+        <img src="k7.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆.˚🪻༘⋆</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k8.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆.˚🪻༘⋆</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k9.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆.˚🪻༘⋆</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k10.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆ ˚｡🌸⋆ ˚｡</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k11.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆ ˚｡🌸⋆ ˚｡</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k12.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆ ˚｡🌸⋆ ˚｡</p>
+    </div>
+    <div class="polaroid">
+        <img src="k13.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆⭒˚.⋆🪐 ⋆⭒˚.⋆</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k14.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆⭒˚.⋆🪐 ⋆⭒˚.⋆</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k15.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆⭒˚.⋆🪐 ⋆⭒˚.⋆</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k16.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>˚ʚ🧸ɞ˚</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k17.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>˚ʚ🧸ɞ˚</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k18.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>˚ʚ🧸ɞ˚</p>
+    </div>
+    <div class="polaroid">
+        <img src="k19.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>.☘︎ ݁˖</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k20.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>.☘︎ ݁˖</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k21.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>.☘︎ ݁˖</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k22.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆.°🦋༘⋆</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k23.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆.°🦋༘⋆</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k24.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆.°🦋༘⋆</p>
+    </div>
+    <div class="polaroid">
+        <img src="k25.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>˙✧˖°📸⋆｡˚</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k26.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>˙✧˖°📸⋆｡˚</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k27.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>˙✧˖°📸⋆｡˚</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k28.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>❤︎</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k29.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>❤︎</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k30.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>❤︎</p>
+    </div>
+    <div class="polaroid">
+        <img src="k31.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>˚｡⋆🌻⋆｡‧˚</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k32.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>˚｡⋆🌻⋆｡‧˚</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k33.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>˚｡⋆🌻⋆｡‧˚</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k34.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆˚🐝˖°</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k35.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆˚🐝˖°</p>
+    </div>
+
+    <div class="polaroid">
+        <img src="k43.jpg" class="zoom-img" onclick="zoomImg(this)">
+        <p>⋆˚🐝˖°</p>
+    </div>
+
+    <div class="polaroid">
+    <video onclick="zoomVideo(this)" class="zoom-img" autoplay muted loop>
+        <source src="k36.mp4" type="video/mp4">
+    </video>
+    <p>⋆˚🐝˖°</p>
+</div>
+
+<div class="polaroid">
+    <video onclick="zoomVideo(this)" class="zoom-img" autoplay muted loop>
+        <source src="k37.mp4" type="video/mp4">
+    </video>
+    <p>⋆⭒˚.⋆🪐 ⋆⭒˚.⋆</p>
+</div>
+
+<div class="polaroid">
+    <video onclick="zoomVideo(this)" class="zoom-img" autoplay muted loop>
+        <source src="k38.mp4" type="video/mp4">
+    </video>
+    <p>⋆⭒˚.⋆🪐 ⋆⭒˚.⋆</p>
+</div>
+
+<div class="polaroid">
+    <video onclick="zoomVideo(this)" class="zoom-img" autoplay muted loop>
+        <source src="k39.mp4" type="video/mp4">
+    </video>
+    <p>⋆⭒˚.⋆🪐 ⋆⭒˚.⋆</p>
+</div>
+
+<div class="polaroid">
+    <video onclick="zoomVideo(this)" class="zoom-img" autoplay muted loop>
+        <source src="k40.mp4" type="video/mp4">
+    </video>
+    <p>🪄✨</p>
+</div>
+
+<div class="polaroid">
+    <video onclick="zoomVideo(this)" class="zoom-img" autoplay muted loop>
+        <source src="k41.mp4" type="video/mp4">
+    </video>
+    <p>🪄✨</p>
+</div>
+
+<div class="polaroid">
+    <video onclick="zoomVideo(this)" class="zoom-img" autoplay muted loop>    
+        <source src="k42.mp4" type="video/mp4">
+    </video>
+    <p>🪄✨</p>
+</div>
+
+</div>
+<div class="media-popup" id="mediaPopup" onclick="closeMedia()">
+    <img id="popupImg" style="display:none;">
+    <video id="popupVideo" style="display:none;" controls></video>
+</div>
+
+<script>
+function zoomImg(img){
+  document.getElementById("popupImg").src = img.src;
+  document.getElementById("popupImg").style.display = "block";
+  document.getElementById("popupVideo").style.display = "none";
+  document.getElementById("mediaPopup").style.display = "flex";
+}
+
+function zoomVideo(video){
+  document.getElementById("popupVideo").src = video.querySelector("source").src;
+  document.getElementById("popupVideo").style.display = "block";
+  document.getElementById("popupImg").style.display = "none";
+  document.getElementById("mediaPopup").style.display = "flex";
+}
+
+function closeMedia(){
+  document.getElementById("mediaPopup").style.display = "none";
+  document.getElementById("popupVideo").pause();
+}
+
+function toggleMusic() {
+    let music = document.getElementById("bgMusic");
+    let btn = document.getElementById("musicBtn");
+
+    if (music.paused) {
+        music.play();
+        btn.textContent = "⏸";
+    } else {
+        music.pause();
+        btn.textContent = "𝄞";
+    }
+}
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
