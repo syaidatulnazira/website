@@ -1,0 +1,487 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Favorite</title>
+
+<style>
+
+.home-btn{
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 32px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+  z-index: 9999;
+}
+
+.home-btn:hover{
+  transform: scale(1.10);
+  opacity: 0.70;
+}
+
+  * { box-sizing: border-box; }
+  body { 
+    font-family: Arial, sans-serif;
+    background: url("biodatabackground.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding: 30px;
+    margin:0;
+  }
+
+  .fav-header {
+    width: 100%;
+    background: #51087E;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+    border-radius: 0px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(108,77,181,0.3);
+  }
+
+  .fav-header h1 {
+    font-size: 36px;
+    margin: 0 0 10px 0;
+  }
+
+
+
+.header-box {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 40px;
+    background: #51087E;
+    margin-bottom: 30px;
+}
+
+.header-box h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+
+  .fav-header p {
+    font-size: 18px;
+    margin: 0;
+    color: #f0e6ff;
+  }
+
+  h2 {
+    color: #6c4db5;
+    margin-top: 40px;
+    border-left: 6px solid #c9afff;
+    padding-left: 10px;
+  }
+
+  .slideshow-container {
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+    margin-bottom: 30px;
+    background: #fff;
+    border: 2px solid #c9afff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .mySlides {
+    display: none;
+  }
+
+  .mySlides img{
+    width:100%;
+    height:500px;
+    object-fit: cover;
+  }
+
+  .text {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    background: #6c4db5;
+    color: white;
+  }
+
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 3px;
+  }
+  .prev { left: 0; }
+  .next { right: 0; }
+
+  .dot-container {
+    text-align: center;
+    background: #ddd;
+    padding: 8px 0;
+  }
+  .dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+
+  /* AUDIO & VIDEO CONTAINER */
+  .box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #c9afff;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+</style>
+</head>
+<body>
+<a href="index.html" class="home-btn">🏠︎</a>
+
+<div class="fav-header">
+  <h1>🎉 My Favorites 🎉</h1>
+</div>
+
+<!-- ----------------------------- -->
+<h2>Favorite Food 🍽️</h2>
+<div class="slideshow-container slideshow1">
+  <div class="mySlides">
+    <img src="m1.jpg">
+    <div class="text">Dumpling</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m2.jpg">
+    <div class="text">Tom Yum</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m3.jpg">
+    <div class="text">Buttermilk Chicken</div>
+  </div>
+  <div class="mySlides">
+    <img src="m4.jpg">
+    <div class="text">Pizza</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m5.jpg">
+    <div class="text">Ayam Masak Lemak</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m6.jpg">
+    <div class="text">Spagetti</div>
+  </div>
+  <div class="mySlides">
+    <img src="m7.jpg">
+    <div class="text">Burger</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m8.jpg">
+    <div class="text">Kek Batik</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m9.jpg">
+    <div class="text">Nasi Lemak</div>
+  </div>
+  <div class="mySlides">
+    <img src="m10.jpg">
+    <div class="text">Roti Canai</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m11.jpg">
+    <div class="text">Mee Goreng</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m12.jpg">
+    <div class="text">Keropok Lekor</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m14.jpg">
+    <div class="text">Onde-Onde</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m15.jpg">
+    <div class="text">Blueberry Cheese Cake</div>
+  </div>
+  <div class="mySlides">
+    <img src="m16.jpg">
+    <div class="text">Cendol</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m17.jpg">
+    <div class="text">Coconut Shake</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m18.jpg">
+    <div class="text">Coffee</div>
+  </div>
+  <div class="mySlides">
+    <img src="m19.jpg">
+    <div class="text">Coffee Ice Cream</div>
+  </div>
+
+  <div class="mySlides">
+    <img src="m20.jpg">
+    <div class="text">Matcha Ice Cream</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">❮</a>
+  <a class="next" onclick="plusSlides(1, 0)">❯</a>
+</div><br>
+
+
+<h2>Favorite Place📍🗺️</h2>
+<div class="slideshow-container slideshow2">
+  <div class="mySlides">
+    <img src="p1.jpg">
+    <div class="text">Jeddah</div>
+  </div>
+
+  <div class="mySlides">
+  <img src="p2.jpg">
+    <div class="text">Cappadocia</div>
+  </div>
+
+  <div class="mySlides">
+  <img src="p3.jpg">
+    <div class="text">Harbin</div>
+  </div>
+
+  <div class="mySlides">
+  <img src="p4.jpg">
+    <div class="text">Angel Falls</div>
+  </div>
+
+  <div class="mySlides">
+  <img src="p5.jpg">
+    <div class="text">Taj Mahal</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">❮</a>
+  <a class="next" onclick="plusSlides(1, 1)">❯</a>
+</div><br>
+
+
+
+<h2>Favorite Drama 🍿</h2>
+<div class="slideshow-container slideshow3">
+  <div class="mySlides">
+  <img src="d1.jpg">
+    <div class="text">Queen Of Tears</div>
+  </div>
+
+  <div class="mySlides">
+  <img src="d2.jpg">
+    <div class="text">Hotel Del Luna</div>
+  </div>
+
+  <div class="mySlides">
+<img src="d3.jpg">
+    <div class="text">Angel Last Mission:Love</div>
+  </div>
+
+  <div class="mySlides">
+  <img src="d4.jpg">
+    <div class="text">The Crowned Clown</div>
+  </div>
+
+  <div class="mySlides">
+  <img src="d5.jpg">
+    <div class="text">The Haunted Palace</div>
+  </div>
+
+  <div class="mySlides">
+  <img src="d6.jpg">
+    <div class="text">Alchemy of Souls</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 2)">❮</a>
+  <a class="next" onclick="plusSlides(1, 2)">❯</a>
+</div><br>
+
+
+<h2>Favorite Actor and Actress 🎥</h2>
+<div class="slideshow-container slideshow4">
+  <div class="mySlides">
+  <img src="a1.jpg">
+    <div class="text">Kim Myung-Soo</div>
+  </div>
+  <div class="mySlides">
+  <img src="a2.jpg">
+    <div class="text">Yeo Jin Goo</div>
+  </div>
+  <div class="mySlides">
+  <img src="a3.jpg">
+    <div class="text">Kim Ji Won</div>
+  </div>
+  <div class="mySlides">
+  <img src="a4.jpg">
+    <div class="text">Dilraba Dilmurat</div>
+  </div>
+  <div class="mySlides">
+  <img src="a5.jpg">
+    <div class="text">Lee Ji Eun</div>
+  </div>
+  <div class="mySlides">
+  <img src="a6.jpg">
+    <div class="text">Lee Se-young</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 3)">❮</a>
+  <a class="next" onclick="plusSlides(1, 3)">❯</a>
+</div><br>
+
+
+
+<h2>Favorite Singer 🎤</h2>
+<div class="slideshow-container slideshow5">
+  <div class="mySlides">
+  <img src="s1.jpg">
+    <div class="text">Twice</div>
+  </div>
+  <div class="mySlides">
+  <img src="s2.jpg">
+    <div class="text">Enhypen</div>
+  </div>
+  <div class="mySlides">
+  <img src="s3.jpg">
+    <div class="text">Afgan</div>
+  </div>
+  <div class="mySlides">
+  <img src="s4.png">
+    <div class="text">Fabio Asher</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 4)">❮</a>
+  <a class="next" onclick="plusSlides(1, 4)">❯</a>
+</div><br>
+
+
+<h2>Favorite Song 🎵</h2>
+<div class="box">
+  <p style="font-weight:bold; margin-bottom:8px;">Rumah Singgah - Fabio Asher</p>
+  <audio controls style="width:100%;">
+    <source src="rumahsingah.mp3" type="audio/mpeg">
+  </audio>
+</div>
+<br>
+
+<div class="box">
+  <p style="font-weight:bold; margin-bottom:8px;">Alamak - Rizky Febian</p>
+  <audio controls style="width:100%;">
+    <source src="alamak.mp3" type="audio/mpeg">
+  </audio>
+</div><br>
+
+<div class="box">
+  <p style="font-weight:bold; margin-bottom:8px;">This is Four - Twice</p>
+  <audio controls style="width:100%;">
+    <source src="twice.mp3" type="audio/mpeg">
+  </audio>
+</div><br>
+
+<div class="box">
+  <p style="font-weight:bold; margin-bottom:8px;">Pujaanku - Kugiran Masdo feat Aisyah Aziz</p>
+  <audio controls style="width:100%;">
+    <source src="pujaanku.mp3" type="audio/mpeg">
+  </audio>
+</div>
+<br>
+
+<div class="box">
+  <p style="font-weight:bold; margin-bottom:8px;">Dinda - Kugiran Masdo</p>
+  <audio controls style="width:100%;">
+    <source src="dinda.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+
+<h2>Favorite Music Video 🎬</h2>
+<div class="box">
+  <p style="font-weight:bold; margin-bottom:8px;">What Is Love - Twice</p>
+  <video width="100%" controls autoplay muted loop style="border-radius:10px;">
+    <source src="WIL.mp4" type="video/mp4">
+  </video>
+</div>
+
+<h2>Spotify Favorites ᯤ</h2>
+<div class="box">
+  <iframe style="border-radius:12px" 
+    src="https://open.spotify.com/embed/artist/7n2Ycct7Beij7Dj7meI4X0?utm_source=generator" 
+    width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+  <br><br>
+
+  <iframe style="border-radius:12px" 
+    src="https://open.spotify.com/embed/album/3f1zSqkzyCUUbN1m6w9BW2?utm_source=generator" 
+    width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+  <br><br>
+
+  <iframe style="border-radius:12px" 
+    src="https://open.spotify.com/embed/artist/6FTLayBxjkQeanFdUusk1I?utm_source=generator" 
+    width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+  <br><br>
+
+  <iframe style="border-radius:12px" 
+    src="https://open.spotify.com/embed/artist/28DdkLhrzQNizZ0ExQpyku?utm_source=generator" 
+    width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+</div>
+
+<script>
+let slideIndex = [1,1,1,1,1,1];
+const slideClasses = ["slideshow1","slideshow2","slideshow3","slideshow4","slideshow5"];
+
+showSlides(1, 0);
+showSlides(1, 1);
+showSlides(1, 2);
+showSlides(1, 3);
+showSlides(1, 4);
+showSlides(1, 5);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  const slides = document.querySelectorAll("." + slideClasses[no] + " .mySlides");
+  if (n > slides.length) { slideIndex[no] = 1; }    
+  if (n < 1) { slideIndex[no] = slides.length; }
+  slides.forEach(s => s.style.display = "none");
+  slides[slideIndex[no]-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html>
