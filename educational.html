@@ -1,0 +1,418 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Resume</title>
+
+<style>
+
+.home-btn{
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 32px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+  z-index: 9999;
+}
+
+.home-btn:hover{
+  transform: scale(1.10);
+  opacity: 0.70;
+} 
+
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: url("biodatabackground.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+    color: #333;
+}
+
+.header-box {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    padding: 40px;
+    background: #51087E;
+    margin-bottom: 30px;
+}
+
+.header-box h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+
+.resume {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    background: #FFE6F0;
+    border-radius: 20px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 30%;
+    background: linear-gradient(180deg, #b89bff, #e4d7ff);
+    padding: 40px 30px;
+    color: #fff;
+}
+
+.sidebar img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    border: 5px solid rgba(255,255,255,0.6);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.sidebar p {
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-top: 3px;
+}
+
+.sidebar-section {
+    margin-top: 40px;
+}
+
+.sidebar-section h3 {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    font-size: 18px;
+}
+
+.sidebar-section ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.sidebar-section li {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.content {
+    width: 70%;
+    padding: 40px;
+}
+
+.content h2 {
+    color: #6c4db5;
+    border-left: 6px solid #c9afff;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.section {
+    margin-bottom: 35px;
+}
+
+.section p, .section li {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.tag {
+    background: #e8d9ff;
+    padding: 6px 12px;
+    border-radius: 12px;
+    margin: 5px;
+    display: inline-block;
+    color: #5637a8;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.edu-section-title {
+    overflow: hidden;
+    white-space: nowrap;
+    border: 3px solid #b08efc;
+    border-radius: 12px;
+    background: #ffffff;
+    padding: 12px 0;
+    box-shadow: 0 0 12px rgba(176, 142, 252, 0.4);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.edu-section-title span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 9s linear infinite;
+    font-size: 26px;
+    font-weight: bold;
+    color: #7b4bda;
+}
+
+.edu-section-title:hover span {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+.edu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.edu-box {
+    border: 2px solid #c9afff;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(175, 142, 252, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s;
+}
+
+.edu-box:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 18px #c09aff, 0 0 25px #d7c3ff;
+}
+
+.edu-box img {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    transition: transform 0.3s;
+}
+
+.edu-box img:hover {
+    transform: scale(1.15);
+}
+
+.school-name {
+    font-weight: bold;
+    font-size: 15px;
+    color: #7b4bda;
+    margin-bottom: 6px;
+}
+
+.period {
+    font-size: 13px;
+    color: #555;
+}
+</style>
+</head>
+<body>
+<a href="index.html" class="home-btn">🏠︎</a>
+
+<!-- HEADER -->
+<div class="header-box">
+    <h1>MY RESUME</h1>
+</div>
+
+<div class="resume">
+
+    <div class="sidebar">
+        <img src="gambarresume.jpeg" alt="Profile Picture">
+
+        <h2>Syaidatul Nazira</h2>
+        <p>Information Management Student</p>
+
+        <div class="sidebar-section">
+            <h3>Contact</h3>
+            <ul>
+                <li>Email: syaidatulnazira24@gmail.com</li>
+                <li>Phone: 017-8253426</li>
+                <li>Muar, Johor, Malaysia</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Languages</h3>
+            <ul>
+                <li>Bahasa Melayu</li>
+                <li>English</li>
+                <li>Basic Arabic</li>
+             
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Skills</h3>
+            <ul>
+                <li>Microsoft Office</li>
+                <li>Basic Coding</li>
+                <li>Communication</li>
+                <li>Teamwork</li>
+                <li>Leadership</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="section">
+            <h2>Career Objective</h2>
+            <p>
+                To secure a position related to information and records management where I can apply my knowledge of cataloging, metadata, and document organising    while contributing to efficient information flow in the organisation.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <ul>
+                <li><strong>Diploma in Information Management</strong></li>
+                    Universiti Teknologi MARA (UiTM)<br>
+                   2023 - 2026<br>
+                </li><br>
+                <li><strong>Sijil Pelajaran Malaysia (SPM)</strong></li>
+                    Sekolah Menengah Agama Parit Sulong (SMAPS)<br>
+                   December 2022 –  March 2023<br>
+                </li><br>
+                    <li><strong>Sijil Menengah Agama (SMA)</strong></li>
+                    Sekolah Menengah Agama Parit Sulong (SMAPS)<br>
+                    2021<br>
+                 </li><br>
+                    <li><strong>Sijil Menengah Rendah Agama (SMRA)</strong></li>
+                    Sekolah Menengah Agama Parit Parit Sulong (SMAPS)<br>
+                    2019<br>
+                 </li><br>
+                    <li><strong>Sijil Intensif Bahasa (SIB)</strong></li>
+                    Sekolah Menengah Agama Parit Parit Sulong (SMAPS)<br>
+                    2018<br>
+                 </li><br>
+                    <li><strong>Sijil Darjah Khas Agama (SDKA)</strong></li>
+                    Sekolah Agama Air Hitam Batu 18 (SAAH)<br>
+                    2018<br>
+                 </li><br>
+                    <li><strong>Sijil Darjah Enam Agama (SDEA)</strong></li>
+                    Sekolah Agama Air Hitam Batu 18 (SAAH)<br>
+                    2017<br>
+                 </li><br>
+                    <li><strong>Ujian Pencapaian Sekolah Rendah (UPSR)</strong></li>
+                    Sekolah Kebangsaan Air Hitam Batu 18 (SKAH)<br>
+                    2017<br>
+                 </li><br>
+                    <li><strong>Ujian Penilaian Kelas KAFA (UPKK)</strong></li>
+                    Sekolah Agama Air Hitam Batu 18 (SAAH)<br>
+                    2016<br>
+
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="edu-section-title">
+                <span>Academic Background</span>
+            </div>
+
+            <div class="edu-grid">
+
+                <div class="edu-box">
+                    <a href="https://www.facebook.com/tabika.kemas.parit.ulu.semerah/">
+                        <img src="kemas.png" alt="Sekolah 1">
+                    </a>
+                    <div class="school-name">Tabika Kemas Parit Ulu Semerah</div>
+                    <div class="period">2009 - 2010</div>
+                </div>
+
+                <div class="edu-box">
+                    <a href="https://www.facebook.com/p/Tabika-KEMAS-Kg-Parit-Tengah-Muar-Johor-100063351392465/">
+                        <img src="kemas.png" alt="Sekolah 2">
+                    </a>
+                    <div class="school-name">Tabika Kemas Parit Tengah</div>
+                    <div class="period">2010 - 2011</div>
+                </div>
+
+                <div class="edu-box">
+                    <a href="https://maps.app.goo.gl/w9gGJd8bFeJ98CPa8">
+                        <img src="skah.jpeg" alt="Sekolah 3">
+                    </a>
+                    <div class="school-name">Sekolah Kebangsaan Air Hitam Batu 18,Muar</div>
+                    <div class="period">2012 - 2017</div>
+                </div>
+
+                <div class="edu-box">
+                    <a href="https://maps.app.goo.gl/T61LK4MrhCnMojgr7">
+                        <img src="saah.png" alt="Sekolah 4">
+                    </a>
+                    <div class="school-name">Sekolah Agama Air Hitam Batu 18,Muar</div>
+                    <div class="period">2012 - 2017</div>
+                </div>
+
+                <div class="edu-box">
+                    <a href="https://maps.app.goo.gl/LcPyB2eeybwDXgTSA">
+                        <img src="smaps.png" alt="Sekolah 5">
+                    </a>
+                    <div class="school-name">Sekolah Mengah Agama Parit Sulong</div>
+                    <div class="period">2018 - 2023</div>
+                </div>
+
+                <div class="edu-box">
+                    <a href="https://maps.app.goo.gl/5PErHfmho1HzNEs28">
+                        <img src="uitm.png" alt="Sekolah 6">
+                    </a>
+                    <div class="school-name">Universiti Teknologi Mara Cawangan Johor Kampus Segamat</div>
+                    <div class="period">2023 - 2026</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="section">
+            <h2>Achievements Certificates and Projects</h2>
+            <ul>
+                <li>Certificate of Participation: Cybersecurity Awareness Enlightenment on the concept of dark data and its challenges in information security                              management.</li>
+                <li>Certificate of Participation: Muet 3.0 Speaking and Writing</li>
+                <li>Certificate of Participation: Palestine Solidarity Rally</li>
+                <li>Certificate of Participation: Stay Motivated to Learn at Home Program</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Additional Skills</h2>
+            <span class="tag">Time Management</span>
+            <span class="tag">Attention to Detail</span>
+            <span class="tag">Problem-solving</span>
+            <span class="tag">Critical Thinking</span>
+            <span class="tag">Graphic design</span>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
