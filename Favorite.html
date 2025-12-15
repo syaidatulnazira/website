@@ -49,8 +49,6 @@
     margin: 0 0 10px 0;
   }
 
-
-
 .header-box {
     width: 100%;
     margin: auto;
@@ -66,7 +64,6 @@
     color: white;
     letter-spacing: 1px;
 }
-
 
   .fav-header p {
     font-size: 18px;
@@ -124,23 +121,7 @@
   .prev { left: 0; }
   .next { right: 0; }
 
-  .dot-container {
-    text-align: center;
-    background: #ddd;
-    padding: 8px 0;
-  }
-  .dot {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 0 4px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  .active, .dot:hover {
-    background-color: #717171;
-  }
+
 
   /* AUDIO & VIDEO CONTAINER */
   .box {
@@ -460,28 +441,53 @@
 </div>
 
 <script>
-let slideIndex = [1,1,1,1,1,1];
-const slideClasses = ["slideshow1","slideshow2","slideshow3","slideshow4","slideshow5"];
 
-showSlides(1, 0);
-showSlides(1, 1);
-showSlides(1, 2);
-showSlides(1, 3);
-showSlides(1, 4);
-showSlides(1, 5);
+const slideClasses = [
+  "slideshow1",
+  "slideshow2",
+  "slideshow3",
+  "slideshow4",
+  "slideshow5"
+];
 
-function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no);
-}
+let slideIndex = [];
+let timers = [];
 
-function showSlides(n, no) {
+
+slideClasses.forEach((cls, i) => {
+  slideIndex[i] = 0;
+  showSlide(i);
+  startAuto(i);
+});
+
+
+function showSlide(no){
   const slides = document.querySelectorAll("." + slideClasses[no] + " .mySlides");
-  if (n > slides.length) { slideIndex[no] = 1; }    
-  if (n < 1) { slideIndex[no] = slides.length; }
   slides.forEach(s => s.style.display = "none");
-  slides[slideIndex[no]-1].style.display = "block";  
+  slideIndex[no]++;
+  if(slideIndex[no] > slides.length) slideIndex[no] = 1;
+  slides[slideIndex[no]-1].style.display = "block";
 }
-</script>
 
+function startAuto(no){
+  timers[no] = setInterval(() => {
+    showSlide(no);
+  }, 1500);
+}
+
+function plusSlides(n, no){
+  clearInterval(timers[no]);
+  slideIndex[no] += n - 1;
+  showSlide(no);
+  startAuto(no);
+}
+
+document.querySelectorAll(".slideshow-container").forEach((box, i) => {
+  box.addEventListener("mouseenter", () => clearInterval(timers[i]));
+  box.addEventListener("mouseleave", () => startAuto(i));
+});
+
+</script>
 </body>
 </html>
+
