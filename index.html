@@ -4,6 +4,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Homepage</title>
   <style>
+    nav a {
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #FFE6F0;
+}
+
+.content-box {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.content-box:hover {
+  transform: translateY(-4px);
+}
+
+.content-box img {
+  transition: transform 0.3s;
+}
+.content-box img:hover {
+  transform: scale(1.05);
+}
+
+#datetime {
+  margin-top: 10px;
+  display: inline-block;
+}
     html {
       scroll-behavior: smooth;
     }
@@ -162,3 +188,4 @@
 </html>
 
     
+
